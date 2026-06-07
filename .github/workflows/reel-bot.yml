@@ -1,0 +1,68 @@
+name: Reel Bot
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "Number of reels"
+        required: true
+        default: "1"
+      upload:
+        description: "Upload to social media"
+        type: boolean
+        default: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          pip install -r requirements.txt
+
+      - name: Decode YouTube token
+        run: |
+          echo "${{ secrets.YOUTUBE_TOKEN_PICKLE_B64 }}" | base64 -d > youtube_token.pickle 2>/dev/null || true
+          echo "${{ secrets.CLIENT_SECRET_JSON }}" | base64 -d > client_secret.json 2>/dev/null || true
+
+      - name: Decode Facebook config
+        run: |
+          echo "${{ secrets.SOCIAL_CONFIG_JSON }}" | base64 -d > social_config.json 2>/dev/null || true
+
+      - name: Create .env
+        run: |
+          echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" > .env
+
+      - name: Generate reels
+        run: |
+          npx tsx src/pipeline.ts ${{ inputs.count || '1' }}
+        env:
+          BROWSER_EXECUTABLE: /usr/bin/google-chrome
+          IMAGE_SOURCE: pexels
+
+      - name: Upload to YouTube & Facebook
+        if: ${{ inputs.upload != false }}
+        run: |
+          bash scripts/upload-current.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: reels
+          path: out/*.mp4

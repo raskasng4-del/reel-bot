@@ -1,0 +1,45 @@
+{
+  "name": "remotion-reels-v2",
+  "version": "2.0.0",
+  "description": "Dark Aesthetic Sigma Reels — Remotion Template",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render PhilosophyReel out/reel.mp4",
+    "render-all": "npx tsx src/render-all.ts",
+    "render-ai": "IMAGE_SOURCE=ai npx tsx src/render-all.ts",
+    "render-ai-stability": "IMAGE_SOURCE=ai IMAGE_ENGINE=stability STABILITY_API_KEY=your_key npx tsx src/render-all.ts",
+    "render-ai-replicate": "IMAGE_SOURCE=ai IMAGE_ENGINE=replicate REPLICATE_API_TOKEN=your_token npx tsx src/render-all.ts",
+    "pipeline": "npx tsx src/pipeline.ts",
+    "pipeline:pixabay": "IMAGE_SOURCE=pixabay npx tsx src/pipeline.ts",
+    "pipeline-ai": "IMAGE_SOURCE=ai npx tsx src/pipeline.ts",
+    "pipeline:dynamic": "npx tsx src/pipeline-dynamic.ts",
+    "pipeline:dynamic-pixabay": "IMAGE_SOURCE=pixabay npx tsx src/pipeline-dynamic.ts",
+    "continuous": "npx tsx src/continuous.ts",
+    "continuous:pixabay": "IMAGE_SOURCE=pixabay npx tsx src/continuous.ts",
+    "continuous:ai": "IMAGE_SOURCE=ai npx tsx src/continuous.ts",
+    "continuous:api": "npx tsx src/continuous.ts 3 30 api",
+    "continuous:api-pixabay": "IMAGE_SOURCE=pixabay npx tsx src/continuous.ts 3 30 api",
+    "upload": "python3 upload-youtube.py",
+    "upload:last": "python3 upload-youtube.py out/reel-*-with-music.mp4",
+    "social:setup": "python3 social-upload.py --setup",
+    "social:fb": "python3 social-upload.py --platforms facebook",
+    "social:ig": "python3 social-upload.py --platforms instagram",
+    "social:tt": "python3 social-upload.py --platforms tiktok",
+    "social:all": "python3 social-upload.py --platforms all",
+    "pipe:upload": "npx tsx src/pipeline.ts 1 && python3 upload-youtube.py out/all-reels-compilation.mp4 --name 'Seneca' --tagtags",
+    "pipe:all": "npx tsx src/pipeline.ts 1 && python3 upload-youtube.py out/all-reels-compilation.mp4 --privacy public && python3 social-upload.py out/all-reels-compilation.mp4 --platforms facebook --delete",
+    "continuous:all": "npx tsx src/continuous.ts --upload"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "tsx": "^4.22.4",
+    "typescript": "^5.3.0"
+  }
+}

@@ -1,0 +1,18 @@
+export interface PhilosophyReelProps extends Record<string, unknown> {
+  hook: string;
+  punchline: string;
+  imageUrl: string;
+  typewriterSpeedMs?: number;
+  typewriterDelayFrames?: number;
+}
+
+const DEFAULT_BG =
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPjxyZWN0IHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIGZpbGw9IiMwYTBhMGEiLz48Y2lyY2xlIGN4PSI1NDAiIGN5PSI0ODAiIHI9IjE2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzBhMDYwIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuMyIvPjxjaXJjbGUgY3g9IjU0MCIgY3k9IjQ4MCIgcj0iMjQwIiBmaWxsPSJub25lIiBzdHJva2U9IiNjMGEwNjAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xNSIvPjx0ZXh0IHg9IjU0MCIgeT0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZpbGw9IiNjMGEwNjAiIG9wYWNpdHk9IjAuNCI+zqM8L3RleHQ+PHRleHQgeD0iNTQwIiB5PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC4wNSIgbGV0dGVyLXNwYWNpbmc9IjgiPlBISUxPU09QSFk8L3RleHQ+PC9zdmc+";
+
+export const defaultProps: PhilosophyReelProps = {
+  hook: "The unexamined life",
+  punchline: "is not worth living. — Socrates",
+  imageUrl: DEFAULT_BG,
+  typewriterSpeedMs: 120,
+  typewriterDelayFrames: 45,
+};
