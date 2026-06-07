@@ -33,8 +33,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
           pip install -r requirements.txt
+          npm ci
 
       - name: Decode YouTube token
         run: |
