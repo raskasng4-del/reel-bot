@@ -36,6 +36,12 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
           pip install -r requirements.txt
+          # Install deno for yt-dlp JS runtime, then yt-dlp
+          curl -fsSL https://deno.land/install.sh | sh -s -- -y
+          export DENO_INSTALL="$HOME/.deno"
+          export PATH="$DENO_INSTALL/bin:$PATH"
+          echo "$DENO_INSTALL/bin" >> $GITHUB_PATH
+          pip install yt-dlp
           npm ci
 
       - name: Decode YouTube token
@@ -50,6 +56,9 @@ jobs:
       - name: Create .env
         run: |
           echo "GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}" > .env
+
+      - name: Download music
+        run: bash scripts/download-music-gh.sh
 
       - name: Generate reels
         run: |

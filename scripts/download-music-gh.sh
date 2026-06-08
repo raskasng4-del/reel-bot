@@ -48,10 +48,11 @@ for term in "${SEARCH_TERMS[@]}"; do
   echo "  Searching: $term"
   yt-dlp -f bestaudio -x --audio-format mp3 \
     --output "$MUSIC_DIR/%(title)s.%(ext)s" \
-    --max-filesize 50M \
+    --max-filesize 30M \
     --playlist-end 1 \
     --socket-timeout 15 \
     --retries 2 \
+    --no-check-certificate \
     "ytsearch1:$term" 2>/dev/null | grep -E "Destination|has already been" || echo "    (failed)"
 done
 
