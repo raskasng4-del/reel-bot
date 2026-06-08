@@ -8,7 +8,6 @@ out
 *.jpg
 *.webp
 *.part
-*.mp3
 client_secret.json
 youtube_token.pickle
 social_config.json
