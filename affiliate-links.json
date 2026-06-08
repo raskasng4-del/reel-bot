@@ -1,0 +1,74 @@
+{
+  "tag": "ssabdo0c-21",
+  "domain": "amazon.com",
+  "default_message": "📚 Deepen your understanding with books from the great minds:",
+  "philosophers": {
+    "Seneca": [
+      { "title": "Letters from a Stoic", "asin": "0140442103" },
+      { "title": "On the Shortness of Life", "asin": "0143036327" }
+    ],
+    "Marcus Aurelius": [
+      { "title": "Meditations", "asin": "0140449337" }
+    ],
+    "Epictetus": [
+      { "title": "The Art of Living", "asin": "0062516690" },
+      { "title": "Discourses and Selected Writings", "asin": "0140449469" }
+    ],
+    "Friedrich Nietzsche": [
+      { "title": "Thus Spoke Zarathustra", "asin": "0140441182" },
+      { "title": "Beyond Good and Evil", "asin": "014044923X" }
+    ],
+    "Socrates": [
+      { "title": "The Last Days of Socrates", "asin": "014044582X" },
+      { "title": "The Republic (Plato)", "asin": "0140455116" }
+    ],
+    "Aristotle": [
+      { "title": "The Nicomachean Ethics", "asin": "0140449493" },
+      { "title": "The Art of Rhetoric", "asin": "0140445102" }
+    ],
+    "Plato": [
+      { "title": "The Republic", "asin": "0140455116" },
+      { "title": "The Symposium", "asin": "0140449272" }
+    ],
+    "Lao Tzu": [
+      { "title": "Tao Te Ching", "asin": "014139199X" }
+    ],
+    "Sun Tzu": [
+      { "title": "The Art of War", "asin": "1590302257" }
+    ],
+    "Arthur Schopenhauer": [
+      { "title": "The World as Will and Representation", "asin": "0486495954" },
+      { "title": "Essays and Aphorisms", "asin": "0140442278" }
+    ],
+    "Immanuel Kant": [
+      { "title": "Critique of Pure Reason", "asin": "0140447474" },
+      { "title": "Groundwork of the Metaphysics of Morals", "asin": "0140445285" }
+    ],
+    "Carl Jung": [
+      { "title": "Man and His Symbols", "asin": "0440351839" },
+      { "title": "Modern Man in Search of a Soul", "asin": "0156612062" }
+    ],
+    "Viktor Frankl": [
+      { "title": "Man's Search for Meaning", "asin": "080701429X" }
+    ],
+    "Sigmund Freud": [
+      { "title": "The Interpretation of Dreams", "asin": "0465021946" },
+      { "title": "Civilization and Its Discontents", "asin": "0393304515" }
+    ],
+    "Abraham Maslow": [
+      { "title": "Toward a Psychology of Being", "asin": "0967038336" },
+      { "title": "Motivation and Personality", "asin": "0060419873" }
+    ],
+    "Carl Rogers": [
+      { "title": "On Becoming a Person", "asin": "039575531X" }
+    ],
+    "B.F. Skinner": [
+      { "title": "Beyond Freedom and Dignity", "asin": "0872206270" },
+      { "title": "Walden Two", "asin": "0872207781" }
+    ],
+    "William James": [
+      { "title": "The Varieties of Religious Experience", "asin": "0140390340" },
+      { "title": "The Principles of Psychology", "asin": "0486495954" }
+    ]
+  }
+}

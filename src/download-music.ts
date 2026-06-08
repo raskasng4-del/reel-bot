@@ -9,19 +9,26 @@ const MOOD_MAP: Record<string, string[]> = {
     "Dark Cinematic Ambient No Copyright Music",
     "Dark Cinematic Ambient Soundtrack ｜ \"Babel\" (Royalty Free Background Music",
     "(No Copyright) Dark Cinematic Ambient Music ｜ \"Ravage\" by Argsound",
+    "Aliaksei Yukhnevich - Deliverance (Epic Dark Orchestral Trailer Music - Copyright Free)",
+    "Dreamy Ambient Cinematic Beautiful Soundtrack ｜ Inspiring Royalty Free Download Music",
+    "Dark Ambient Music Mix ｜ Royalty Free Suspenseful Background Music",
   ],
   "sad-piano": [
     "Dark Atmospheric Cinematic Thoughtful Piano Music For Trailers and Videos",
     "Emotional Sad Piano Music ｜ Touch  (Download and Royalty FREE)",
     "Crying - Sad Emotional Background Music No Copyright Music Free Sad Music",
+    "Sad and Emotional Piano by Alex-Productions (No Copyright Music) Free Music ｜ Sad Piano ｜",
+    "Life Blossom by Keys of Moon Music - Cinematic - Classical - Emotional - Piano - No Copyright Music",
   ],
   epic: [
     "Epic & Heroic Orchestral Music Compilation ｜ Cinematic Royalty-Free Soundtracks",
     "Sad Dramatic Emotional Epic Music - My Spirit Is Free [Royalty Free]",
+    "Aliaksei Yukhnevich - Deliverance (Epic Dark Orchestral Trailer Music - Copyright Free)",
   ],
   meditative: [
     "3 Hours of Deep Thinking and Reflection - Stoic Roman Philosopher Meditation (Ambient)",
     "After going through so many challenges in life, you have acquired an armored mind ｜ Stoic Ambience",
+    "Dreamy Ambient Cinematic Beautiful Soundtrack ｜ Inspiring Royalty Free Download Music",
   ],
   greek: [
     "Ancient Greek Background Music for Philosophy Videos ｜ No Copyright",
@@ -30,20 +37,26 @@ const MOOD_MAP: Record<string, string[]> = {
   thoughtful: [
     "Philosophy Background Music ( no copyright Royalty-Free Rhythms)",
     "Ancient Greek Background Music for Philosophy Videos ｜ No Copyright",
+    "Life Blossom by Keys of Moon Music - Cinematic - Classical - Emotional - Piano - No Copyright Music",
+    "Dreamy Ambient Cinematic Beautiful Soundtrack ｜ Inspiring Royalty Free Download Music",
   ],
   "sad-emotional": [
     "Crying - Sad Emotional Background Music No Copyright Music Free Sad Music",
     "End ｜ Sad Non Copyright Background music",
     "Sad Cinematic Documentary Music by Infraction [No Copyright Music] ⧸ Planet",
+    "Sad and Emotional Piano by Alex-Productions (No Copyright Music) Free Music ｜ Sad Piano ｜",
   ],
   dramatic: [
     "Sad Dramatic Emotional Epic Music - My Spirit Is Free [Royalty Free]",
     "Dark Cinematic Ambient Soundtrack ｜ \"Babel\" (Royalty Free Background Music",
+    "Aliaksei Yukhnevich - Deliverance (Epic Dark Orchestral Trailer Music - Copyright Free)",
   ],
   mysterious: [
     "Dark Cinematic Ambient No Copyright Music",
     "(No Copyright) Dark Cinematic Ambient Music ｜ \"Ravage\" by Argsound",
     "Ancient Greek Background Music for Philosophy Videos ｜ No Copyright",
+    "Dreamy Ambient Cinematic Beautiful Soundtrack ｜ Inspiring Royalty Free Download Music",
+    "Dark Ambient Music Mix ｜ Royalty Free Suspenseful Background Music",
   ],
 };
 

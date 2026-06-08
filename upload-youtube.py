@@ -111,6 +111,40 @@ def generate_meta(name, quote):
         pass
     return None
 
+AFFILIATE_FILE = os.path.join(os.path.dirname(__file__), "affiliate-links.json")
+
+def append_affiliate_links(name, desc):
+    try:
+        with open(AFFILIATE_FILE) as f:
+            cfg = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return desc
+    tag = cfg.get("tag", "")
+    domain = cfg.get("domain", "amazon.com")
+    msg = cfg.get("default_message", "")
+    philosophers = cfg.get("philosophers", {})
+
+    # Find philosopher (case-insensitive partial match)
+    found = None
+    for key in philosophers:
+        if name.lower().strip() == key.lower().strip() or key.lower() in name.lower():
+            found = key
+            break
+    if not found:
+        return desc
+
+    books = philosophers[found]
+    links = []
+    for b in books:
+        url = f"https://www.{domain}/dp/{b['asin']}?tag={tag}"
+        links.append(f"📖 {b['title']}: {url}")
+
+    if not links:
+        return desc
+
+    affiliate_block = f"\n\n{msg}\n" + "\n".join(links)
+    return desc + affiliate_block
+
 STATE_FILE = os.path.join(os.path.dirname(__file__), "out", "uploaded-quotes.json")
 
 def load_uploaded():
@@ -178,6 +212,8 @@ def main():
         title = os.path.splitext(os.path.basename(args.video))[0]
     if not desc:
         desc = f"{title}\n\n#philosophy #wisdom"
+
+    desc = append_affiliate_links(name, desc)
 
     print("Authenticating with YouTube...")
     youtube = get_authenticated_service()

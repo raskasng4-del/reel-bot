@@ -76,6 +76,36 @@ def upload_tiktok(access_token, open_id, video_path, desc):
     print(f"  [TikTok] FAILED: {r.text[:300]}")
     return None
 
+# ─── Amazon Affiliate ──────────────────────────────────────
+AFFILIATE_FILE = os.path.join(os.path.dirname(__file__), "affiliate-links.json")
+
+def append_affiliate_links(name, desc):
+    try:
+        with open(AFFILIATE_FILE) as f:
+            cfg = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return desc
+    tag = cfg.get("tag", "")
+    domain = cfg.get("domain", "amazon.com")
+    msg = cfg.get("default_message", "")
+    philosophers = cfg.get("philosophers", {})
+    found = None
+    for key in philosophers:
+        if name.lower().strip() == key.lower().strip() or key.lower() in name.lower():
+            found = key
+            break
+    if not found:
+        return desc
+    books = philosophers[found]
+    links = []
+    for b in books:
+        url = f"https://www.{domain}/dp/{b['asin']}?tag={tag}"
+        links.append(f"📖 {b['title']}: {url}")
+    if not links:
+        return desc
+    affiliate_block = f"\n\n{msg}\n" + "\n".join(links)
+    return desc + affiliate_block
+
 # ─── Config management ────────────────────────────────────
 def save_config(config):
     with open(CONFIG_FILE, "w") as f:
@@ -223,6 +253,8 @@ def main():
         title = "Daily Wisdom"
     if not desc:
         desc = "#philosophy #wisdom"
+
+    desc = append_affiliate_links(name, desc)
 
     uploaded_any = False
     for p in platforms:
