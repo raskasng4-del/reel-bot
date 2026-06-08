@@ -27,6 +27,17 @@ SEARCH_TERMS=(
   "End Sad Non Copyright Background music"
   "Sad Cinematic Documentary Music by Infraction No Copyright Music"
   "Philosophy MuktoDMI Free copyright"
+  "IN MEMORIAM by Onycs ambient royalty free"
+  "Helen 2 Nikos Spiliotis ambient no copyright"
+  "Shattered Glass Cjbeards mysterious dark piano"
+  "Undertow Scott Buckley sad piano ambient"
+  "Purpose Jonny Easton piano royalty free"
+  "Awakening Steffen Daum epic piano no copyright"
+  "Growing Up Scott Buckley piano no copyright"
+  "Fuzzeke We Built This World epic orchestral trailer music"
+  "Monumental Alex Productions cinematic motivational orchestral"
+  "Farewell sad piano emotional royalty free"
+  "Stoic and the Sailor Unicorn Heads ambient background"
 )
 
 echo "=== Downloading music for GitHub Actions ==="
