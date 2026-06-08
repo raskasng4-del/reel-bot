@@ -4,10 +4,10 @@ out
 .env
 *.mp4
 *.webm
-*.mp3
 *.png
 *.jpg
 *.webp
+*.part
 client_secret.json
 youtube_token.pickle
 social_config.json
