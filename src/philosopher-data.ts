@@ -232,7 +232,43 @@ export const PHILOSOPHER_QUOTES: PhilosopherEntry[] = [
   },
 ];
 
+import path from "path";
+import fs from "fs";
+
+const OUT_DIR = path.resolve(__dirname, "../out");
+const USED_QUOTES_FILE = path.join(OUT_DIR, "used-quotes.json");
+
+function loadUsedQuotes(): string[] {
+  try {
+    return JSON.parse(fs.readFileSync(USED_QUOTES_FILE, "utf-8"));
+  } catch {
+    return [];
+  }
+}
+
+function saveUsedQuotes(used: string[]) {
+  fs.mkdirSync(path.dirname(USED_QUOTES_FILE), { recursive: true });
+  fs.writeFileSync(USED_QUOTES_FILE, JSON.stringify(used, null, 2));
+}
+
 export function randomEntries(count: number): PhilosopherEntry[] {
-  const shuffled = [...PHILOSOPHER_QUOTES].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+  const used = loadUsedQuotes();
+  const available = PHILOSOPHER_QUOTES.filter((_, i) => !used.includes(i.toString()));
+
+  if (available.length < count) {
+    saveUsedQuotes([]);
+    const shuffled = [...PHILOSOPHER_QUOTES].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+  }
+
+  const shuffled = [...available].sort(() => Math.random() - 0.5);
+  const picked = shuffled.slice(0, count);
+  const pickedIndices = picked.map(e => PHILOSOPHER_QUOTES.indexOf(e));
+  saveUsedQuotes([...used, ...pickedIndices.map(String)]);
+
+  return picked;
+}
+
+export function resetUsedQuotes() {
+  saveUsedQuotes([]);
 }
