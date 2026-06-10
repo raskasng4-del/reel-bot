@@ -62,7 +62,7 @@ jobs:
 
       - name: Generate reels
         run: |
-          npx tsx src/pipeline.ts ${{ inputs.count || '1' }}
+          npx tsx src/pipeline-dynamic.ts ${{ inputs.count || '1' }}
         env:
           BROWSER_EXECUTABLE: /usr/bin/google-chrome
           IMAGE_SOURCE: pexels
