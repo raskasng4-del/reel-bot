@@ -38,6 +38,22 @@ SEARCH_TERMS=(
   "Monumental Alex Productions cinematic motivational orchestral"
   "Farewell sad piano emotional royalty free"
   "Stoic and the Sailor Unicorn Heads ambient background"
+  # Sad piano variety — added for diversity
+  "Alone Sad Emotional Piano Royalty Free Music"
+  "Rainy Day Sad Piano Background Music No Copyright"
+  "Last Goodbye Emotional Piano Free Music"
+  "Melancholic Night Sad Piano Ambient"
+  "Tears of Hope Sad Piano Instrumental Royalty Free"
+  "Broken Heart Sad Emotional Piano Music"
+  "Forgotten Memories Sad Piano Ambient"
+  "Lost in Thought Melancholic Piano Free Music"
+  "Winter Sadness Piano Instrumental No Copyright"
+  "Letting Go Emotional Piano Royalty Free"
+  "Fading Light Sad Ambient Piano"
+  "Empty Room Melancholic Piano Background Music"
+  "Deep Sorrow Piano Music Free Download"
+  "Sadness and Hope Emotional Piano Instrumental"
+  "Whisper of Tears Piano Ambient No Copyright"
 )
 
 echo "=== Downloading music for GitHub Actions ==="
