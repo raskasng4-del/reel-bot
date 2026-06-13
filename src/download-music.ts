@@ -66,6 +66,7 @@ const MOOD_MAP: Record<string, string[]> = {
     "Emotional Sad Piano Music - Farewell [Royalty Free]",
     "😓 Sad Piano Ambient Music (Copyright Free) - ＂Undertow＂ by @ScottBuckley",
     "Emotional Piano - Purpose - Royalty Free Music",
+    "Sad Piano & Violin Music (Version 3) | Touching No Copyright Emotional Music #HeartStrings",
   ],
   dramatic: [
     "Sad Dramatic Emotional Epic Music - My Spirit Is Free [Royalty Free]",

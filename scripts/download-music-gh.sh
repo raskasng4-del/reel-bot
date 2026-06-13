@@ -54,6 +54,8 @@ SEARCH_TERMS=(
   "Deep Sorrow Piano Music Free Download"
   "Sadness and Hope Emotional Piano Instrumental"
   "Whisper of Tears Piano Ambient No Copyright"
+  # From user selection
+  "Sad Piano & Violin Music (Version 3) | Touching No Copyright Emotional Music #HeartStrings"
 )
 
 echo "=== Downloading music for GitHub Actions ==="
